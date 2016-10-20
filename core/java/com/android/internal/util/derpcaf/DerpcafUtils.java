@@ -49,6 +49,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 
 import java.util.List;
+import java.util.Locale;
 
 import com.android.internal.statusbar.IStatusBarService;
 import android.content.pm.PackageInfo;
@@ -250,6 +251,11 @@ public class DerpcafUtils {
             }
         }
         return null;
+    }
+
+    public static boolean isChineseLanguage() {
+       return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
+               Locale.CHINESE.getLanguage());
     }
 }
 
