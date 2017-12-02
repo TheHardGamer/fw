@@ -4907,8 +4907,6 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     }
 
-<<<<<<< HEAD
-=======
     // Switches qs header style to user selected.
     public static void updateNewQSHeaderStyle(IOverlayManager om, int userId, int qsHeaderStyle) {
         if (qsHeaderStyle == 0) {
