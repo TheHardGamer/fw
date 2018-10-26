@@ -3059,6 +3059,7 @@ public class WindowManagerService extends IWindowManager.Stub
         return mPolicy.isKeyguardLocked();
     }
 
+    @Override
     public boolean isKeyguardShowingAndNotOccluded() {
         return mPolicy.isKeyguardShowingAndNotOccluded();
     }
