@@ -126,7 +126,8 @@ public class KeyguardStatusView extends GridLayout implements
 	    refreshLockDateFont();
 	    refreshclocksize();
 	    refreshdatesize();
-        }
+	    updateSettings();
+	}
 
         @Override
         public void onLogoutEnabledChanged() {
