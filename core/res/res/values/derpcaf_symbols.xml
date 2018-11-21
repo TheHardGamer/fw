@@ -198,4 +198,39 @@
   <!-- Oreo's recents component activity -->
   <java-symbol type="string" name="config_recentsComponentNameOreo" />
 
+  <!-- SystemUI Restart -->
+  <java-symbol type="string" name="systemui_restart_title" />
+  <java-symbol type="string" name="systemui_restart_message" />
+
+  <!-- Device keyhandlers -->
+  <java-symbol type="array" name="config_deviceKeyHandlerLibs" />
+  <java-symbol type="array" name="config_deviceKeyHandlerClasses" />
+
+  <!-- Ambient play -->
+  <java-symbol type="string" name="ambient_recognition_notification" />
+  <java-symbol type="string" name="ambient_recognition_information" />
+
+  <java-symbol type="anim" name="inv_app_in" />
+  <java-symbol type="anim" name="inv_app_out" />
+
+  <!-- Powermenu animations -->
+  <java-symbol type="style" name="GlobalActionsAnimation" />
+  <java-symbol type="style" name="GlobalActionsAnimationTop" />
+  <java-symbol type="style" name="GlobalActionsAnimationEnter" />
+  <java-symbol type="style" name="GlobalActionsAnimationFly" />
+  <java-symbol type="style" name="GlobalActionsAnimationTn" />
+  <java-symbol type="style" name="GlobalActionsAnimationTranslucent" />
+  <java-symbol type="style" name="GlobalActionsAnimationXylon" />
+  <java-symbol type="style" name="GlobalActionsAnimationCard" />
+  <java-symbol type="style" name="GlobalActionsAnimationRotate" />
+  <!-- Hardware Key Binding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
+  <!-- Button Backlight -->
+  <java-symbol type="integer" name="config_buttonBrightnessSettingDefault" />
+  <java-symbol type="bool" name="config_deviceHasVariableButtonBrightness" />
+
+  <!-- System fonts -->
+  <java-symbol type="array" name="config_fontPackages" />
+
 </resources>

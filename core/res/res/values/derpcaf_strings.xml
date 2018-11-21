@@ -56,5 +56,7 @@
     <string name="animation_grow_shrink_right">Grow in (Right)</string>
     <string name="action_null">Blank</string>
     <string name="animation_ethans">Ethans</string>
+    <string name="permlab_accessFontManager">access font manager</string>
+    <string name="permdesc_accessFontManager">Allows an application to access the font manager.</string>
 
 </resources>
