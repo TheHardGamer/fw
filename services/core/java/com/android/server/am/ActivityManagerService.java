@@ -4378,7 +4378,11 @@ public class ActivityManagerService extends IActivityManager.Stub
                 runtimeFlags |= policyBits;
             }
 
+<<<<<<< HEAD
 			// Check if zygote should refresh its fonts
+=======
+            // Check if zygote should refresh its fonts
+>>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             boolean refreshTheme = false;
             if (SystemProperties.getBoolean(PROP_REFRESH_THEME, false)) {
                 SystemProperties.set(PROP_REFRESH_THEME, "false");
