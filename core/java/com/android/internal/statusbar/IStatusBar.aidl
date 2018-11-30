@@ -153,7 +153,6 @@ oneway interface IStatusBar
     void hideFingerprintDialog();
 
     /**
-     * Derp-CAF
      */
     void toggleCameraFlash();
 }

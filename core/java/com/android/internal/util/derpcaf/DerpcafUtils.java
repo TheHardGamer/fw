@@ -17,7 +17,12 @@
 package com.android.internal.util.derpcaf;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog; 
+import android.app.IActivityManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.res.Resources;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -36,11 +41,16 @@ import android.view.InputDevice;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.net.ConnectivityManager;
+import android.os.AsyncTask;
+import android.net.NetworkInfo;
+import com.android.internal.R;
+import android.provider.Settings;
+import android.os.SystemProperties;
+import android.os.UserHandle;
 
 import java.util.List;
 
 import com.android.internal.statusbar.IStatusBarService;
-
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 
@@ -60,7 +70,6 @@ public class DerpcafUtils {
     }
 
     public static boolean deviceHasFlashlight(Context ctx) {
-
         return ctx.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
     }
 
@@ -77,12 +86,96 @@ public class DerpcafUtils {
         }
         return true;
     }
-     public static boolean isPackageInstalled(Context context, String pkg) {
+
+    public static boolean isPackageInstalled(Context context, String pkg) {
         return isPackageInstalled(context, pkg, true);
     }
 
+    public static void restartSystemUi(Context context) {
+        new RestartSystemUiTask(context).execute();
+    }
+
+    public static void showSystemUiRestartDialog(Context context) {
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.systemui_restart_title)
+                .setMessage(R.string.systemui_restart_message)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        restartSystemUi(context);
+                    }
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private static class RestartSystemUiTask extends AsyncTask<Void, Void, Void> {
+        private Context mContext;
+
+
+        public RestartSystemUiTask(Context context) {
+            super();
+            mContext = context;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                ActivityManager am =
+                        (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+                IActivityManager ams = ActivityManager.getService();
+                for (ActivityManager.RunningAppProcessInfo app: am.getRunningAppProcesses()) {
+                    if ("com.android.systemui".equals(app.processName)) {
+                        ams.killApplicationProcess(app.processName, app.uid);
+                        break;
+                    }
+                }
+                //Class ActivityManagerNative = Class.forName("android.app.ActivityManagerNative");
+                //Method getDefault = ActivityManagerNative.getDeclaredMethod("getDefault", null);
+                //Object amn = getDefault.invoke(null, null);
+                //Method killApplicationProcess = amn.getClass().getDeclaredMethod("killApplicationProcess", String.class, int.class);
+                //mContext.stopService(new Intent().setComponent(new ComponentName("com.android.systemui", "com.android.systemui.SystemUIService")));
+                //am.killBackgroundProcesses("com.android.systemui");
+                //for (ActivityManager.RunningAppProcessInfo app : am.getRunningAppProcesses()) {
+                //    if ("com.android.systemui".equals(app.processName)) {
+                //        killApplicationProcess.invoke(amn, app.processName, app.uid);
+                //        break;
+                //    }
+                //}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+
     public static void toggleCameraFlash() {
         FireActions.toggleCameraFlash();
+    }
+
+    public static void sendKeycode(int keycode) {
+        long when = SystemClock.uptimeMillis();
+        final KeyEvent evDown = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, keycode, 0,
+                0, KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
+                KeyEvent.FLAG_FROM_SYSTEM | KeyEvent.FLAG_VIRTUAL_HARD_KEY,
+                InputDevice.SOURCE_KEYBOARD);
+        final KeyEvent evUp = KeyEvent.changeAction(evDown, KeyEvent.ACTION_UP);
+
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                InputManager.getInstance().injectInputEvent(evDown,
+                        InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
+            }
+        });
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                InputManager.getInstance().injectInputEvent(evUp,
+                        InputManager.INJECT_INPUT_EVENT_MODE_ASYNC);
+            }
+        }, 20);
     }
 
     private static final class FireActions {
@@ -159,3 +252,5 @@ public class DerpcafUtils {
         return null;
     }
 }
+
+
