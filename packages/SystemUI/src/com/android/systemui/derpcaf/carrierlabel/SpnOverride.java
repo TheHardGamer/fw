@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.xtended.carrierlabel;
+package com.android.systemui.derpcaf.carrierlabel;
 
 import java.io.File;
 import java.io.FileNotFoundException;

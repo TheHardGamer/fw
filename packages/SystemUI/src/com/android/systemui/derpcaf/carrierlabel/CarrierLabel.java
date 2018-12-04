@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.xtended.carrierlabel;
+package com.android.systemui.derpcaf.carrierlabel;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -34,11 +34,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.android.internal.util.xtended.XtendedUtils;
+import com.android.internal.util.derpcaf.DerpcafUtils;
 import com.android.internal.telephony.TelephonyIntents;
 
 import com.android.systemui.Dependency;
-import com.android.systemui.xtended.carrierlabel.SpnOverride;
+import com.android.systemui.derpcaf.carrierlabel.SpnOverride;
 import com.android.systemui.statusbar.policy.DarkIconDispatcher;
 import com.android.systemui.statusbar.policy.DarkIconDispatcher.DarkReceiver;
 
@@ -171,7 +171,7 @@ public class CarrierLabel extends TextView implements DarkReceiver {
                         intent.getStringExtra(TelephonyIntents.EXTRA_SPN),
                         intent.getBooleanExtra(TelephonyIntents.EXTRA_SHOW_PLMN, false),
                         intent.getStringExtra(TelephonyIntents.EXTRA_PLMN));
-                isCN = XtendedUtils.isChineseLanguage();
+                isCN = DerpcafUtils.isChineseLanguage();
             }
         }
     };
