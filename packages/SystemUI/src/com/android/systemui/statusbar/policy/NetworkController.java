@@ -51,7 +51,8 @@ public interface NetworkController extends CallbackController<SignalCallback>, D
                 String statusLabel) {}
 
         default void setMobileDataIndicators(IconState statusIcon, IconState qsIcon, int statusType,
-                int qsType, boolean activityIn, boolean activityOut, int volteIcon,
+                int qsType, boolean activityIn, boolean activityOut, int dataActivityId,
+                int stackedDataIcon, int stackedVoiceIcon,
                 String typeContentDescription, String description, boolean isWide,
                 int subId, boolean roaming) {}
         default void setSubs(List<SubscriptionInfo> subs) {}

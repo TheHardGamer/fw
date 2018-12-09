@@ -136,6 +136,8 @@ public class CallbackHandlerTest extends SysuiTestCase {
                 qsArg.capture(), typeIconArg.capture(), qsTypeIconArg.capture(), inArg.capture(),
                 outArg.capture(),
                 ArgumentCaptor.forClass(Integer.class).capture(),
+                ArgumentCaptor.forClass(Integer.class).capture(),
+                ArgumentCaptor.forClass(Integer.class).capture(),
                 typeContentArg.capture(), descArg.capture(), wideArg.capture(),
                 subIdArg.capture(), eq(roaming));
         assertEquals(status, statusArg.getValue());

@@ -245,7 +245,8 @@ public class CellularTile extends QSTileImpl<SignalState> {
 
         @Override
         public void setMobileDataIndicators(IconState statusIcon, IconState qsIcon, int statusType,
-                int qsType, boolean activityIn, boolean activityOut, int volteIcon,
+                int qsType, boolean activityIn, boolean activityOut, int dataActivityId,
+                int stackedDataIcon, int stackedVoiceIcon,
                 String typeContentDescription, String description, boolean isWide,
                 int subId, boolean roaming) {
             if (qsIcon == null) {
