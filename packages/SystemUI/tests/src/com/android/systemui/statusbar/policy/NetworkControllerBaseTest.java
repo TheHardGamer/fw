@@ -371,8 +371,6 @@ public class NetworkControllerBaseTest extends SysuiTestCase {
                 typeIconArg.capture(),
                 anyInt(), anyBoolean(), anyBoolean(), 
                 ArgumentCaptor.forClass(Integer.class).capture(),
-                ArgumentCaptor.forClass(Integer.class).capture(),
-                ArgumentCaptor.forClass(Integer.class).capture(),
                 anyString(), anyString(), anyBoolean(),
                 anyInt(), eq(roaming));
         IconState iconState = iconArg.getValue();

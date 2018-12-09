@@ -296,6 +296,22 @@ public class StatusBarMobileView extends FrameLayout implements DarkReceiver,
         return mState;
     }
 
+    private boolean needFixVisibleState() {
+        if ( mState.visible && (getVisibility() != View.VISIBLE) ) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    private boolean needFixInVisibleState() {
+        if ( !mState.visible && (getVisibility() == View.VISIBLE)) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "StatusBarMobileView(slot=" + mSlot + " state=" + mState + ")";

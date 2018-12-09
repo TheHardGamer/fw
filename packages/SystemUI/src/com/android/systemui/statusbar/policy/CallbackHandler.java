@@ -124,8 +124,7 @@ public class CallbackHandler extends Handler implements EmergencyListener, Signa
     @Override
     public void setMobileDataIndicators(final IconState statusIcon, final IconState qsIcon,
             final int statusType, final int qsType,final boolean activityIn,
-            final boolean activityOut, final int dataActivityId,
-            final int stackedDataIcon, final int stackedVoiceIcon,
+            final boolean activityOut, final int volteIcon,
             final String typeContentDescription, final String description, final boolean isWide,
             final int subId, boolean roaming) {
         post(new Runnable() {
