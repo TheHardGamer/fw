@@ -969,6 +969,12 @@ public final class DefaultPermissionGrantPolicy {
             grantRuntimePermissions(googledialerPackage, CONTACTS_PERMISSIONS, true, userId);
             grantRuntimePermissions(googledialerPackage, SMS_PERMISSIONS, userId);
         }
+	// Soundpicker
+        PackageParser.Package soundpickerPackage = getSystemPackage("com.google.android.soundpicker");
+        if (soundpickerPackage != null) {
+            grantRuntimePermissions(soundpickerPackage, STORAGE_PERMISSIONS, true, userId);
+        }
+
         // Pixel Wallpaper
         PackageParser.Package pixelwallsPackage = getDefaultProviderAuthorityPackage("com.google.android.apps.wallpaper", userId);
         if (pixelwallsPackage != null) {
