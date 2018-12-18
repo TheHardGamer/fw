@@ -58,5 +58,6 @@
     <string name="animation_ethans">Ethans</string>
     <string name="permlab_accessFontManager">access font manager</string>
     <string name="permdesc_accessFontManager">Allows an application to access the font manager.</string>
+    <string name="fontservice_incompatible_font">The font package you\'ve installed is not compatible due to missing fonts.xml on their files. Please contact the package developer for support.</string>
 
 </resources>
