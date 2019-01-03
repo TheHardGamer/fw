@@ -1625,7 +1625,6 @@ public final class SystemServer {
             } catch (Throwable e) {
                 Slog.e(TAG, "Failure starting EdgeGesture service", e);
             }
-        }
 
         if (!isWatch) {
             traceBeginAndSlog("StartMediaProjectionManager");
