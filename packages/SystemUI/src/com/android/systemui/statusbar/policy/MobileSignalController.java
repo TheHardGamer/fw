@@ -648,10 +648,12 @@ public class MobileSignalController extends SignalController<
 
         if ( mAlwasyShowTypeIcon ) {
             int iconType = TelephonyManager.NETWORK_TYPE_UNKNOWN;
-            if ( isDataNetworkTypeAvailable() ) {
-                iconType = mDataNetType;
-            }else {
-                iconType = getVoiceNetworkType();
+            if ( mCurrentState.connected ) {
+                if (isDataNetworkTypeAvailable()) {
+                    iconType = mDataNetType;
+                } else {
+                    iconType = getVoiceNetworkType();
+                }
             }
 
             if (mNetworkToIconLookup.indexOfKey(iconType) >= 0) {
