@@ -45,10 +45,7 @@ public class FontListParser {
         in = new FileInputStream(configFilename);
         return FontListParser.parse(in, fontDir);
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
      /* Parse fallback list (no names) */
     public static FontConfig parse(InputStream in, String fontDir)
             throws XmlPullParserException, IOException {
@@ -86,28 +83,17 @@ public class FontListParser {
             if (parser.getEventType() != XmlPullParser.START_TAG) continue;
             String tag = parser.getName();
             if (tag.equals("family")) {
-<<<<<<< HEAD
                 families.add(readFamily(parser, dirPath));
-=======
-                families.add(readFamily(parser,dirPath));
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             } else if (tag.equals("alias")) {
                 aliases.add(readAlias(parser));
             } else {
                 skip(parser);
             }
         }
-<<<<<<< HEAD
         return new FontConfig(families, aliases);
     }
 
     private static FontConfig.Family readFamily(XmlPullParser parser, String dirPath)
-=======
-        return new FontConfig(families,aliases);
-    }
-
-    private static FontConfig.Family readFamily(XmlPullParser parser,String dirPath)
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             throws XmlPullParserException, IOException {
         final String name = parser.getAttributeValue(null, "name");
         final String lang = parser.getAttributeValue(null, "lang");
@@ -118,11 +104,7 @@ public class FontListParser {
             if (parser.getEventType() != XmlPullParser.START_TAG) continue;
             final String tag = parser.getName();
             if (tag.equals("font")) {
-<<<<<<< HEAD
                 fonts.add(readFont(parser, dirPath));
-=======
-                fonts.add(readFont(parser,dirPath));
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             } else {
                 skip(parser);
             }

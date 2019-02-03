@@ -227,11 +227,7 @@ public class ZygoteProcess {
                                                   String instructionSet,
                                                   String appDataDir,
                                                   String invokeWith,
-<<<<<<< HEAD
 						                          boolean refreshTheme,
-=======
-                                                  boolean refreshTheme,
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
                                                   String[] zygoteArgs) {
         try {
             return startViaZygote(processClass, niceName, uid, gid, gids,
@@ -370,11 +366,7 @@ public class ZygoteProcess {
                                                       String instructionSet,
                                                       String appDataDir,
                                                       String invokeWith,
-<<<<<<< HEAD
 						                              boolean refreshTheme,
-=======
-                                                      boolean refreshTheme,
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
                                                       boolean startChildZygote,
                                                       String[] extraArgs)
                                                       throws ZygoteStartFailedEx {
@@ -386,11 +378,7 @@ public class ZygoteProcess {
         argsForZygote.add("--setuid=" + uid);
         argsForZygote.add("--setgid=" + gid);
         argsForZygote.add("--runtime-flags=" + runtimeFlags);
-<<<<<<< HEAD
 	    if (refreshTheme) {
-=======
-        if (refreshTheme) {
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             argsForZygote.add("--refresh_theme");
         }
         if (mountExternal == Zygote.MOUNT_EXTERNAL_DEFAULT) {

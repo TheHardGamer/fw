@@ -221,18 +221,11 @@ public final class FontConfig {
             mVariant = variant;
         }
 
-<<<<<<< HEAD
 	    public void clearName() {
             mName = null;
         }
 
 
-=======
-        public void clearName() {
-            mName = null;
-        }
-
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
         /**
          * Returns the name given by the system to this font family.
          */

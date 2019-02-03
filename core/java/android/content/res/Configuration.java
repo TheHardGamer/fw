@@ -1222,11 +1222,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         int changed = 0;
         if (delta.fontScale > 0 && fontScale != delta.fontScale) {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
-<<<<<<< HEAD
 	        changed |= ActivityInfo.CONFIG_THEME_FONT;
-=======
-            changed |= ActivityInfo.CONFIG_THEME_FONT;
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             fontScale = delta.fontScale;
         }
         if (delta.mcc != 0 && mcc != delta.mcc) {
@@ -1388,11 +1384,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         if (delta.assetsSeq != ASSETS_SEQ_UNDEFINED && delta.assetsSeq != assetsSeq) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
             changed |= ActivityInfo.CONFIG_THEME_FONT;
-<<<<<<< HEAD
 	        assetsSeq = delta.assetsSeq;
-=======
-            assetsSeq = delta.assetsSeq;
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
         }
         if (delta.seq != 0) {
             seq = delta.seq;
@@ -1461,11 +1453,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
         if ((compareUndefined || delta.fontScale > 0) && fontScale != delta.fontScale) {
             changed |= ActivityInfo.CONFIG_FONT_SCALE;
             changed |= ActivityInfo.CONFIG_THEME_FONT;
-<<<<<<< HEAD
 	    }
-=======
-        }
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
         if ((compareUndefined || delta.mcc != 0) && mcc != delta.mcc) {
             changed |= ActivityInfo.CONFIG_MCC;
         }
@@ -1555,11 +1543,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
                 && assetsSeq != delta.assetsSeq) {
             changed |= ActivityInfo.CONFIG_ASSETS_PATHS;
             changed |= ActivityInfo.CONFIG_THEME_FONT;
-<<<<<<< HEAD
 	    }
-=======
-        }
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
 
         // WindowConfiguration differences aren't considered public...
         if (!publicOnly

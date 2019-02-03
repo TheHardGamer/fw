@@ -127,10 +127,6 @@ public class Typeface {
     static final String FONTS_CONFIG = "fonts.xml";
 
     static final String SANS_SERIF_FAMILY_NAME = "sans-serif";
-<<<<<<< HEAD
-=======
-
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
     /**
      * @hide
      */
@@ -911,11 +907,7 @@ public class Typeface {
         for (int i = 0; i < families.length; i++) {
             ptrArray[i] = families[i].mNativePtr;
         }
-<<<<<<< HEAD
 		Typeface typeface =  new Typeface(nativeCreateFromArray(
-=======
-        Typeface typeface = new Typeface(nativeCreateFromArray(
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
                 ptrArray, RESOLVE_BY_FONT_TABLE, RESOLVE_BY_FONT_TABLE));
         return typeface;
     }
@@ -924,15 +916,9 @@ public class Typeface {
      * This method is used by supportlib-v27.
      * TODO: Remove private API use in supportlib: http://b/72665240
      */
-<<<<<<< HEAD
 	private static Typeface createFromFamiliesWithDefault(FontFamily[] families,
 		int weight, int italic) {
 		long[] ptrArray = new long[families.length + sFallbackFonts.length];
-=======
-    private static Typeface createFromFamiliesWithDefault(FontFamily[] families,
-                int weight, int italic) {
-        long[] ptrArray = new long[families.length + sFallbackFonts.length];
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
         for (int i = 0; i < families.length; i++) {
             ptrArray[i] = families[i].mNativePtr;
         }
@@ -1122,11 +1108,7 @@ public class Typeface {
     public static void buildSystemFallback(String xmlPath, String fontDir,
             ArrayMap<String, Typeface> fontMap, ArrayMap<String, FontFamily[]> fallbackMap) {
         try {
-<<<<<<< HEAD
 	        final InputStream xmlFile = new FileInputStream(xmlPath);
-=======
-            final InputStream xmlFile = new FileInputStream(xmlPath);
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             final FontConfig fontConfig = FontListParser.parse(xmlFile, fontDir);
 
             final HashMap<String, ByteBuffer> bufferCache = new HashMap<String, ByteBuffer>();
@@ -1373,16 +1355,9 @@ public class Typeface {
         sDefaults[2] = create((String) null, Typeface.ITALIC);
         sDefaults[3] = create((String) null, Typeface.BOLD_ITALIC);
     }
-<<<<<<< HEAD
     static {
 	init();
 	    ArrayMap<String, Typeface> systemFontMap = new ArrayMap<>();
-=======
-
-    static {
-        init();
-        ArrayMap<String, Typeface> systemFontMap = new ArrayMap<>();
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
         ArrayMap<String, FontFamily[]> systemFallbackMap = new ArrayMap<>();
         buildSystemFallback("/system/etc/fonts.xml", "/system/fonts/", systemFontMap,
                 systemFallbackMap);

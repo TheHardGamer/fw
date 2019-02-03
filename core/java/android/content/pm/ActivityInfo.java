@@ -761,11 +761,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
      * Bit in {@link #configChanges} that indicates a font change occurred
      * @hide
      */
-<<<<<<< HEAD
     public static final int CONFIG_THEME_FONT = 0x200000;    
-=======
-    public static final int CONFIG_THEME_FONT = 0x200000;
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
     /**
      * Bit in {@link #configChanges} that indicates that the activity
      * can itself handle the change to the display color gamut or dynamic

@@ -204,11 +204,7 @@ class ZygoteConnection {
             }
         }
 
-<<<<<<< HEAD
 	    if (parsedArgs.refreshTheme) {
-=======
-        if (parsedArgs.refreshTheme) {
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             Typeface.recreateDefaults();
         }
 
@@ -418,19 +414,11 @@ class ZygoteConnection {
 
         /** from --invoke-with */
         String invokeWith;
-<<<<<<< HEAD
  	
 	    /** from --refresh-theme */
         boolean refreshTheme;
         
 	    /**
-=======
-
-        /** from --refresh-theme */
-        boolean refreshTheme;
-
-        /**
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
          * Any args after and including the first non-option arg
          * (or after a '--')
          */

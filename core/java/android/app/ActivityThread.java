@@ -67,7 +67,6 @@ import android.database.sqlite.SQLiteDebug;
 import android.database.sqlite.SQLiteDebug.DbStats;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Typeface;
 import android.graphics.ImageDecoder;
 import android.graphics.Typeface;
 import android.hardware.display.DisplayManagerGlobal;
@@ -5196,19 +5195,11 @@ public final class ActivityThread extends ClientTransactionHandler {
             boolean hasLocaleConfigChange = ((configDiff & ActivityInfo.CONFIG_LOCALE) != 0);
             boolean hasFontConfigChange = ((configDiff & ActivityInfo.CONFIG_THEME_FONT) != 0);
             if (hasLocaleConfigChange || hasFontConfigChange) {
-<<<<<<< HEAD
                 Canvas.freeTextLayoutCaches();
                 if (hasFontConfigChange) {
                     Typeface.recreateDefaults();
                 }
                 if (DEBUG_CONFIGURATION) Slog.v(TAG, "Cleared TextLayout Caches");
-=======
-                 Canvas.freeTextLayoutCaches();
-                if (hasFontConfigChange) {
-                    Typeface.recreateDefaults();
-                }
-                 if (DEBUG_CONFIGURATION) Slog.v(TAG, "Cleared TextLayout Caches");
->>>>>>> d9dd51e3a84... base: Add dynamic theme fonts support
             }
         }
     }
